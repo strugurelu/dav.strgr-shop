@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>DAV,STRGR Shop</title>
+<style>
+/* Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+/* Fondo blanco con rayos animados */
+body {
+    background-color: #ffffff;
+    background-image: repeating-linear-gradient(
+        45deg,
+        rgba(255,255,255,0) 0px,
+        rgba(255,255,255,0) 20px,
+        rgba(255, 210, 0, 0.05) 21px,
+        rgba(255, 210, 0, 0.05) 25px
+    );
+    animation: moverRayos 5s linear infinite;
+    color: #222;
+}
+
+@keyframes moverRayos {
+    from { background-position: 0 0; }
+    to { background-position: 200px 200px; }
+}
+
+/* Header */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 3rem;
+    background-color: #222;
+    color: #fff;
+}
+
+header .logo {
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+header nav ul {
+    list-style: none;
+    display: flex;
+    gap: 1.5rem;
+}
+
+header nav a {
+    color: #fff;
+    text-decoration: none;
+    transition: 0.3s;
+}
+
+header nav a:hover {
+    color: #f39c12;
+}
+
+/* Hero */
+.hero {
+    text-align: center;
+    padding: 5rem 1rem;
+}
+
+.hero h1 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+}
+
+.hero p {
+    margin-bottom: 2rem;
+    font-size: 1.2rem;
+}
+
+.btn {
+    padding: 0.8rem 1.5rem;
+    background-color: #f39c12;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 5px;
+}
+
+/* Productos */
+.productos {
+    padding: 3rem 1rem;
+    text-align: center;
+}
+
+.grid-productos {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+.producto {
+    border: 1px solid #ddd;
+    padding: 1rem;
+    border-radius: 10px;
+    background: rgba(255,255,255,0.95);
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+}
+
+.producto img {
+    max-width: 100%;
+    border-radius: 10px;
+}
+
+.producto h3 {
+    margin: 1rem 0 0.5rem;
+}
+
+.producto button {
+    padding: 0.5rem 1rem;
+    background-color: #222;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.producto button:hover {
+    background-color: #f39c12;
+}
+
+/* Secciones */
+section {
+    padding: 3rem 1rem;
+}
+
+.nosotros, .contacto, .carrito {
+    background-color: rgba(255,255,255,0.95);
+    margin-top: 2rem;
+    border-radius: 10px;
+    padding: 2rem;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+}
+
+/* Formulario */
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    max-width: 400px;
+    margin: auto;
+}
+
+form input, form textarea {
+    padding: 0.8rem;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+
+form button {
+    padding: 0.8rem;
+    border: none;
+    border-radius: 5px;
+    background-color: #222;
+    color: #fff;
+    cursor: pointer;
+}
+
+form button:hover {
+    background-color: #f39c12;
+}
+</style>
+</head>
+<body>
+
+<!-- Header -->
+<header>
+    <div class="logo">DAV,STRGR Shop</div>
+    <nav>
+        <ul>
+            <li><a href="#productos">Productos</a></li>
+            <li><a href="#nosotros">Nosotros</a></li>
+            <li><a href="#contacto">Contacto</a></li>
+            <li><a href="#carrito">Carrito 🛒</a></li>
+        </ul>
+    </nav>
+</header>
+
+<!-- Hero -->
+<section class="hero">
+    <h1>Bienvenido a DAV,STRGR Shop</h1>
+    <p>Tu moda, tu estilo, tu tienda online</p>
+    <a href="#productos" class="btn">Ver Productos</a>
+</section>
+
+<!-- Productos -->
+<section id="productos" class="productos">
+    <h2>Nuestros Productos</h2>
+    <div class="grid-productos">
+        <!-- Asics Kayano 14 Blancas -->
+        <div class="producto">
+            <img src="https://github.com/strugurelu/dav.strgr-shop/raw/main/imagenes/kayano14white.png" alt="Asics Kayano 14 Blancas">
+            <h3>Asics Kayano 14 Blancas</h3>
+            <p>Talla 42</p>
+            <p>120€</p>
+            <button onclick="agregarAlCarrito('Asics Kayano 14 Blancas', 120)">Agregar al carrito</button>
+        </div>
+        <!-- Jordan Travis Scott Low OG Mocha -->
+        <div class="producto">
+            <img src="https://github.com/strugurelu/dav.strgr-shop/raw/main/imagenes/travisogmocha.png" alt="Jordan Travis Scott Low OG Mocha">
+            <h3>Jordan Travis Scott Low OG Mocha</h3>
+            <p>50€</p>
+            <p>50€</p>
+            <button onclick="agregarAlCarrito('Jordan Travis Scott Low OG Mocha', 50)">Agregar al carrito</button>
+        </div>
+    </div>
+</section>
+
+<!-- Nosotros -->
+<section id="nosotros" class="nosotros">
+    <h2>Sobre Nosotros</h2>
+    <p>En DAV,STRGR Shop creemos en la moda que refleja tu personalidad. Solo vendemos zapatillas top de streetwear.</p>
+</section>
+
+<!-- Contacto -->
+<section id="contacto" class="contacto">
+    <h2>Contacto</h2>
+    <form>
+        <input type="text" placeholder="Nombre" required>
+        <input type="email" placeholder="Correo" required>
+        <textarea placeholder="Mensaje" required></textarea>
+        <button type="submit">Enviar</button>
+    </form>
+</section>
+
+<!-- Carrito -->
+<section id="carrito" class="carrito">
+    <h2>Carrito de Compras</h2>
+    <ul id="lista-carrito"></ul>
+    <p>Total: €<span id="total">0</span></p>
+</section>
+
+<script>
+// Carrito funcional
+let carrito = [];
+let total = 0;
+
+function agregarAlCarrito(nombre, precio) {
+    carrito.push({nombre, precio});
+    total += precio;
+    actualizarCarrito();
+}
+
+function actualizarCarrito() {
+    const lista = document.getElementById('lista-carrito');
+    lista.innerHTML = '';
+    carrito.forEach((item, index) => {
+        const li = document.createElement('li');
+        li.textContent = `${item.nombre} - €${item.precio}`;
+        const btn = document.createElement('button');
+        btn.textContent = 'Eliminar';
+        btn.style.marginLeft = '10px';
+        btn.onclick = () => eliminarDelCarrito(index);
+        li.appendChild(btn);
+        lista.appendChild(li);
+    });
+    document.getElementById('total').textContent = total;
+}
+
+function eliminarDelCarrito(index) {
+    total -= carrito[index].precio;
+    carrito.splice(index, 1);
+    actualizarCarrito();
+}
+</script>
+
+</body>
+</html>
