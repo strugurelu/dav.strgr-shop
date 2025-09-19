@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>DAV,STRGR Shop</title>
+<title>DAV.STRGR Shop</title>
 <style>
 /* Reset */
 * {
@@ -11,25 +11,17 @@
     padding: 0;
     box-sizing: border-box;
     font-family: Arial, sans-serif;
+    scroll-behavior: smooth; /* Scroll suave para toda la página */
 }
 
-/* Fondo blanco con rayos animados */
+/* Fondo con rayos */
 body {
-    background-color: #ffffff;
-    background-image: repeating-linear-gradient(
-        45deg,
-        rgba(255,255,255,0) 0px,
-        rgba(255,255,255,0) 20px,
-        rgba(255, 210, 0, 0.05) 21px,
-        rgba(255, 210, 0, 0.05) 25px
-    );
-    animation: moverRayos 5s linear infinite;
-    color: #222;
-}
-
-@keyframes moverRayos {
-    from { background-position: 0 0; }
-    to { background-position: 200px 200px; }
+    background-color: #001f3f; /* Azul oscuro base */
+    background-image: url('https://github.com/strugurelu/dav.strgr-shop/raw/main/imagenes/rayos.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    color: #e0f7ff; /* Azul claro para texto */
 }
 
 /* Header */
@@ -38,8 +30,11 @@ header {
     justify-content: space-between;
     align-items: center;
     padding: 1rem 3rem;
-    background-color: #222;
-    color: #fff;
+    background-color: rgba(0, 40, 80, 0.9);
+    color: #e0f7ff;
+    position: sticky;
+    top: 0;
+    z-index: 100;
 }
 
 header .logo {
@@ -54,13 +49,13 @@ header nav ul {
 }
 
 header nav a {
-    color: #fff;
+    color: #e0f7ff;
     text-decoration: none;
     transition: 0.3s;
 }
 
 header nav a:hover {
-    color: #f39c12;
+    color: #33c4ff;
 }
 
 /* Hero */
@@ -72,19 +67,28 @@ header nav a:hover {
 .hero h1 {
     font-size: 2.5rem;
     margin-bottom: 1rem;
+    color: #33c4ff;
 }
 
 .hero p {
     margin-bottom: 2rem;
     font-size: 1.2rem;
+    color: #b3e0ff;
 }
 
 .btn {
     padding: 0.8rem 1.5rem;
-    background-color: #f39c12;
-    color: #fff;
+    background-color: #33c4ff;
+    color: #001f3f;
     text-decoration: none;
     border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.btn:hover {
+    background-color: #007acc;
+    color: #ffffff;
 }
 
 /* Productos */
@@ -101,11 +105,11 @@ header nav a:hover {
 }
 
 .producto {
-    border: 1px solid #ddd;
+    border: 1px solid #33c4ff;
     padding: 1rem;
     border-radius: 10px;
-    background: rgba(255,255,255,0.95);
-    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    background: rgba(0,40,80,0.7);
+    box-shadow: 0 4px 6px rgba(0,0,0,0.2);
 }
 
 .producto img {
@@ -115,19 +119,25 @@ header nav a:hover {
 
 .producto h3 {
     margin: 1rem 0 0.5rem;
+    color: #33c4ff;
+}
+
+.producto p {
+    margin-bottom: 0.5rem;
 }
 
 .producto button {
     padding: 0.5rem 1rem;
-    background-color: #222;
-    color: #fff;
+    background-color: #007acc;
+    color: #e0f7ff;
     border: none;
     border-radius: 5px;
     cursor: pointer;
 }
 
 .producto button:hover {
-    background-color: #f39c12;
+    background-color: #33c4ff;
+    color: #001f3f;
 }
 
 /* Secciones */
@@ -135,12 +145,14 @@ section {
     padding: 3rem 1rem;
 }
 
+/* Secciones internas */
 .nosotros, .contacto, .carrito {
-    background-color: rgba(255,255,255,0.95);
+    background-color: rgba(0,40,80,0.7);
     margin-top: 2rem;
     border-radius: 10px;
     padding: 2rem;
-    box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+    box-shadow: 0 4px 6px rgba(0,0,0,0.2);
+    color: #e0f7ff;
 }
 
 /* Formulario */
@@ -154,21 +166,38 @@ form {
 
 form input, form textarea {
     padding: 0.8rem;
-    border: 1px solid #ddd;
+    border: 1px solid #33c4ff;
     border-radius: 5px;
+    background-color: rgba(0,0,0,0.1);
+    color: #e0f7ff;
 }
 
 form button {
     padding: 0.8rem;
     border: none;
     border-radius: 5px;
-    background-color: #222;
-    color: #fff;
+    background-color: #33c4ff;
+    color: #001f3f;
+    font-weight: bold;
     cursor: pointer;
 }
 
 form button:hover {
-    background-color: #f39c12;
+    background-color: #007acc;
+    color: #ffffff;
+}
+
+/* Botón Pagar */
+#pagar {
+    margin-top: 1rem;
+    background-color: #33c4ff;
+    color: #001f3f;
+    font-weight: bold;
+}
+
+#pagar:hover {
+    background-color: #007acc;
+    color: #ffffff;
 }
 </style>
 </head>
@@ -176,7 +205,7 @@ form button:hover {
 
 <!-- Header -->
 <header>
-    <div class="logo">DAV,STRGR Shop</div>
+    <div class="logo">DAV.STRGR</div>
     <nav>
         <ul>
             <li><a href="#productos">Productos</a></li>
@@ -189,7 +218,7 @@ form button:hover {
 
 <!-- Hero -->
 <section class="hero">
-    <h1>Bienvenido a DAV,STRGR Shop</h1>
+    <h1>Bienvenido a DAV.STRGR Shop</h1>
     <p>Tu moda, tu estilo, tu tienda online</p>
     <a href="#productos" class="btn">Ver Productos</a>
 </section>
@@ -220,7 +249,7 @@ form button:hover {
 <!-- Nosotros -->
 <section id="nosotros" class="nosotros">
     <h2>Sobre Nosotros</h2>
-    <p>En DAV,STRGR Shop creemos en la moda que refleja tu personalidad. Solo vendemos zapatillas top de streetwear.</p>
+    <p>En DAV.STRGR Shop creemos en la moda que refleja tu personalidad. Solo vendemos zapatillas top de streetwear.</p>
 </section>
 
 <!-- Contacto -->
@@ -239,6 +268,7 @@ form button:hover {
     <h2>Carrito de Compras</h2>
     <ul id="lista-carrito"></ul>
     <p>Total: €<span id="total">0</span></p>
+    <button id="pagar" class="btn">Pagar por WhatsApp</button>
 </section>
 
 <script>
@@ -257,7 +287,7 @@ function actualizarCarrito() {
     lista.innerHTML = '';
     carrito.forEach((item, index) => {
         const li = document.createElement('li');
-        li.textContent = `${item.nombre} - €${item.precio}`;
+        li.textContent = `${item.nombre} (€${item.precio})`;
         const btn = document.createElement('button');
         btn.textContent = 'Eliminar';
         btn.style.marginLeft = '10px';
@@ -273,6 +303,24 @@ function eliminarDelCarrito(index) {
     carrito.splice(index, 1);
     actualizarCarrito();
 }
+
+// Botón Pagar por WhatsApp
+document.getElementById('pagar').addEventListener('click', () => {
+    if (carrito.length === 0) {
+        alert("Tu carrito está vacío.");
+        return;
+    }
+
+    let mensaje = "Hola, quiero comprar los siguientes productos:\n";
+    carrito.forEach(item => {
+        mensaje += `- ${item.nombre} (€${item.precio})\n`;
+    });
+    mensaje += `Total: €${total}`;
+
+    let telefono = "34642607380"; 
+    let url = `https://wa.me/${telefono}?text=${encodeURIComponent(mensaje)}`;
+    window.open(url, "_blank");
+});
 </script>
 
 </body>
